@@ -52,7 +52,7 @@ namespace Kampovilasttry.Repositories
         }
         private static Guest CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["GuestId"].ToString());
+            int guestid = int.Parse(reader["GuestId"].ToString());
             string firstName = reader["FirstName"].ToString();
             string lastName = reader["LastName"].ToString();
             string phone = reader["Phone"].ToString();
@@ -60,7 +60,7 @@ namespace Kampovilasttry.Repositories
             int age = int.Parse(reader["Age"].ToString());
             var guest = new Guest
             {
-                GuestId = id,
+                GuestId = guestid,
                 FirstName = firstName,
                 LastName = lastName,
                 Phone = phone,

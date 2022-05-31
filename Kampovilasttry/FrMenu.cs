@@ -32,7 +32,10 @@ namespace Kampovilasttry
 
         private void btnGuestList_Click(object sender, EventArgs e)
         {
-
+            FrGuests frGuests = new FrGuests();
+            Hide();
+            frGuests.ShowDialog();
+            Close();
         }
     }
 }

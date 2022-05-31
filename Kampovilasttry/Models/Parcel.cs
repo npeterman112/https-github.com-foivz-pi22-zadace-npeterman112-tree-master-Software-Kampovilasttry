@@ -14,5 +14,10 @@ namespace Kampovilasttry.Models
         public string Season { get; set; }
         public int Price { get; set; }
 
+        public override string ToString()
+        {
+                return Type;
+            
+        }
     }
 }
