@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kampovilasttry.Models
 {
-    public abstract class Person : object
+    public abstract class Person
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
