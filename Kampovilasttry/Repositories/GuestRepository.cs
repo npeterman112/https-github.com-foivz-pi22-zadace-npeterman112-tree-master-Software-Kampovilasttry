@@ -12,12 +12,12 @@ namespace Kampovilasttry.Repositories
     public class GuestRepository {
        
 
-        public static Guest GetGuest(int id, npeterman_DBDataSet npeterman_DBDataSet)
+        public static Guest GetGuest(int id, npeterman_DBDataSet npeterman_DBDataSet1)
         {
             
 
             Guest guest = null;
-            string sql = $"SELECT * FROM Guests WHERE Id = {id}";
+            string sql = $"SELECT * FROM Guests1 WHERE Id = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -30,7 +30,7 @@ namespace Kampovilasttry.Repositories
             return guest;
         }
 
-        private static void SetConfiguration(npeterman_DBDataSet npeterman_DBDataSet)
+        private static void SetConfiguration(npeterman_DBDataSet npeterman_DBDataSet1)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +38,7 @@ namespace Kampovilasttry.Repositories
         public static List<Guest> GetGuests()
         {
             var guests = new List<Guest>();
-            string sql = "SELECT * FROM Guests";
+            string sql = "SELECT * FROM Guests1";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())

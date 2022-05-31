@@ -4,7 +4,11 @@
 
     partial class npeterman_DBDataSet
     {
-        partial class DataTable1DataTable
+        partial class PersonDataTable
+        {
+        }
+
+        partial class GuestsDataTable
         {
             readonly int _ID;
 
@@ -15,7 +19,7 @@
             readonly string _Phone;
             string _OIB;
 
-            public DataTable1DataTable(string oIB)
+            public GuestsDataTable(string oIB)
             {
                 _OIB = oIB;
             }
@@ -24,7 +28,7 @@
 
             public override bool Equals(object obj)
             {
-                return obj is DataTable1DataTable table &&
+                return obj is GuestsDataTable table &&
                        _GuestId == table._GuestId;
             }
 

@@ -27,6 +27,10 @@ namespace Kampovilasttry
 
         private void btnAccomodationList_Click(object sender, EventArgs e)
         {
+            FrParcel frParcel = new FrParcel();
+            Hide();
+            frParcel.ShowDialog();
+            Close();
 
         }
 

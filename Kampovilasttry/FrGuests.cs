@@ -36,5 +36,21 @@ namespace Kampovilasttry
             dgvGuests.Columns["Age"].DisplayIndex = 5;
 
         }
+
+        private void btnRezerviraj_Click(object sender, EventArgs e)
+        {
+            Guest selectedGuest = dgvGuests.CurrentRow.DataBoundItem as Guest;
+            if (selectedGuest != null)
+            {
+                FrParcel frmParcel = new FrParcel(selectedGuest);
+                frmParcel.ShowDialog();
+            }
+
+        }
+
+        private void dgvGuests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
