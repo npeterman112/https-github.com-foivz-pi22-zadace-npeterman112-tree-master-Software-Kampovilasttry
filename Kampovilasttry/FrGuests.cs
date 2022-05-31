@@ -21,12 +21,12 @@ namespace Kampovilasttry
 
         private void FrGuests_Load(object sender, EventArgs e)
         {
-            ShowGuests();
+            ShowGuests1();
         }
-        private void ShowGuests()
+        private void ShowGuests1()
         {
-            List<Guest> guests = GuestRepository.GetGuests();
-            dgvGuests.DataSource = guests;
+            List<Guest> guests1 = GuestRepository.GetGuests();
+            dgvGuests.DataSource = guests1;
 
             dgvGuests.Columns["GuestID"].DisplayIndex = 0;
             dgvGuests.Columns["FirstName"].DisplayIndex = 1;
@@ -48,7 +48,7 @@ namespace Kampovilasttry
 
         }
 
-        private void dgvGuests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvGuests1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -43,7 +43,7 @@
             this.dgvGuests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGuests.Size = new System.Drawing.Size(715, 374);
             this.dgvGuests.TabIndex = 0;
-            this.dgvGuests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGuests_CellContentClick);
+            this.dgvGuests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGuests1_CellContentClick);
             // 
             // btnRezerviraj
             // 

@@ -12,12 +12,12 @@ namespace Kampovilasttry.Repositories
     public class GuestRepository {
        
 
-        public static Guest GetGuest(int id, npeterman_DBDataSet npeterman_DBDataSet1)
+        public static Guest GetGuest(int id, npeterman_DBDataSet1 npeterman_DBDataSet1)
         {
             
 
             Guest guest = null;
-            string sql = $"SELECT * FROM Guests1 WHERE Id = {id}";
+            string sql = "SELECT * FROM Guests1 WHERE GuestId = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -37,18 +37,18 @@ namespace Kampovilasttry.Repositories
 
         public static List<Guest> GetGuests()
         {
-            var guests = new List<Guest>();
+            List <Guest> guests1 = new List<Guest>();
             string sql = "SELECT * FROM Guests1";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
             {
                 Guest guest = CreateObject(reader);
-                guests.Add(guest);
+                guests1.Add(guest);
             }
             reader.Close();
             DB.CloseConnection();
-            return guests;
+            return guests1;
         }
         private static Guest CreateObject(SqlDataReader reader)
         {
