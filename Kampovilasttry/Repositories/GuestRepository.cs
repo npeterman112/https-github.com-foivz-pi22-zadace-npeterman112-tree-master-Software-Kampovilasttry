@@ -7,19 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Kampovilasttry.Repositories
 {
     public class GuestRepository {
        
 
-        public static Guest GetGuest(int id, npeterman_DBDataSet1 npeterman_DBDataSet1)
+        public static Guest GetGuest(int id)
         {
+            DB.SetConfiguration(database: "npeterman_DB",
+                                username: "npeterman",
+                                password: "SY&$1!WH");
             
-
             Guest guest = null;
-            string sql = "SELECT * FROM Guests1 WHERE GuestId = {id}";
+            string sql = $"SELECT * FROM Guests WHERE GuestId = {id}";
             DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
+            SqlDataReader reader = DB.GetDataReader(sql);
             if (reader.HasRows)
             {
                 reader.Read();
@@ -30,23 +34,28 @@ namespace Kampovilasttry.Repositories
             return guest;
         }
 
-        private static void SetConfiguration(npeterman_DBDataSet npeterman_DBDataSet1)
-        {
-            throw new NotImplementedException();
-        }
-
+   
         public static List<Guest> GetGuests()
         {
-            List <Guest> guests1 = new List<Guest>();
-            string sql = "SELECT * FROM Guests1";
-            DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
-            while (reader.Read())
+            
+            List<Guest> guests1 = new List<Guest>();
+            string sql = "SELECT * FROM Guests";
+             DB.OpenConnection();
+            SqlDataReader reader = DB.GetDataReader(sql);
             {
-                Guest guest = CreateObject(reader);
-                guests1.Add(guest);
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+                        Guest guest = CreateObject(reader);
+                        guests1.Add(guest);
+                    }
+                }
+                else { Console.WriteLine("No rows found"); }
+                reader.Close();
             }
-            reader.Close();
+
             DB.CloseConnection();
             return guests1;
         }

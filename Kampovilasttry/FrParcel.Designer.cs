@@ -1,4 +1,6 @@
-﻿namespace Kampovilasttry
+﻿using System;
+
+namespace Kampovilasttry
 {
     partial class FrParcel
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.txtSeason = new System.Windows.Forms.TextBox();
@@ -40,11 +43,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnInput = new System.Windows.Forms.Button();
             this.btnBackToMenu = new System.Windows.Forms.Button();
-            this.cboID = new System.Windows.Forms.ComboBox();
-            this.cboCapacity = new System.Windows.Forms.ComboBox();
-            this.cboSeason = new System.Windows.Forms.ComboBox();
-            this.cboPrice = new System.Windows.Forms.ComboBox();
-            this.cboType = new System.Windows.Forms.ComboBox();
+            this.dgvParcels = new System.Windows.Forms.DataGridView();
+            this.npeterman_DBDataSet2 = new Kampovilasttry.npeterman_DBDataSet2();
+            this.parcelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.parcelsTableAdapter = new Kampovilasttry.npeterman_DBDataSet2TableAdapters.ParcelsTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParcels)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
@@ -130,13 +140,13 @@
             // 
             // btnInput
             // 
-            this.btnInput.Location = new System.Drawing.Point(75, 370);
+            this.btnInput.Location = new System.Drawing.Point(88, 289);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(75, 23);
             this.btnInput.TabIndex = 10;
             this.btnInput.Text = "Input";
             this.btnInput.UseVisualStyleBackColor = true;
-            this.btnInput.Click += new System.EventHandler(this.button1_Click);
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // btnBackToMenu
             // 
@@ -148,56 +158,76 @@
             this.btnBackToMenu.UseVisualStyleBackColor = true;
             this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
-            // cboID
+            // dgvParcels
             // 
-            this.cboID.FormattingEnabled = true;
-            this.cboID.Location = new System.Drawing.Point(544, 74);
-            this.cboID.Name = "cboID";
-            this.cboID.Size = new System.Drawing.Size(121, 21);
-            this.cboID.TabIndex = 12;
+            this.dgvParcels.AllowUserToOrderColumns = true;
+            this.dgvParcels.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvParcels.AutoGenerateColumns = false;
+            this.dgvParcels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParcels.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn,
+            this.seasonDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dgvParcels.DataSource = this.parcelsBindingSource;
+            this.dgvParcels.Location = new System.Drawing.Point(256, 23);
+            this.dgvParcels.Name = "dgvParcels";
+            this.dgvParcels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvParcels.Size = new System.Drawing.Size(539, 330);
+            this.dgvParcels.TabIndex = 12;
             // 
-            // cboCapacity
+            // npeterman_DBDataSet2
             // 
-            this.cboCapacity.FormattingEnabled = true;
-            this.cboCapacity.Location = new System.Drawing.Point(544, 119);
-            this.cboCapacity.Name = "cboCapacity";
-            this.cboCapacity.Size = new System.Drawing.Size(121, 21);
-            this.cboCapacity.TabIndex = 13;
+            this.npeterman_DBDataSet2.DataSetName = "npeterman_DBDataSet2";
+            this.npeterman_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cboSeason
+            // parcelsBindingSource
             // 
-            this.cboSeason.FormattingEnabled = true;
-            this.cboSeason.Location = new System.Drawing.Point(544, 158);
-            this.cboSeason.Name = "cboSeason";
-            this.cboSeason.Size = new System.Drawing.Size(121, 21);
-            this.cboSeason.TabIndex = 14;
+            this.parcelsBindingSource.DataMember = "Parcels";
+            this.parcelsBindingSource.DataSource = this.npeterman_DBDataSet2;
             // 
-            // cboPrice
+            // parcelsTableAdapter
             // 
-            this.cboPrice.FormattingEnabled = true;
-            this.cboPrice.Location = new System.Drawing.Point(544, 205);
-            this.cboPrice.Name = "cboPrice";
-            this.cboPrice.Size = new System.Drawing.Size(121, 21);
-            this.cboPrice.TabIndex = 15;
+            this.parcelsTableAdapter.ClearBeforeFill = true;
             // 
-            // cboType
+            // idDataGridViewTextBoxColumn
             // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(544, 249);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 21);
-            this.cboType.TabIndex = 16;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // capacityDataGridViewTextBoxColumn
+            // 
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            // 
+            // seasonDataGridViewTextBoxColumn
+            // 
+            this.seasonDataGridViewTextBoxColumn.DataPropertyName = "Season";
+            this.seasonDataGridViewTextBoxColumn.HeaderText = "Season";
+            this.seasonDataGridViewTextBoxColumn.Name = "seasonDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // FrParcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cboType);
-            this.Controls.Add(this.cboPrice);
-            this.Controls.Add(this.cboSeason);
-            this.Controls.Add(this.cboCapacity);
-            this.Controls.Add(this.cboID);
+            this.Controls.Add(this.dgvParcels);
             this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.btnInput);
             this.Controls.Add(this.label5);
@@ -213,6 +243,9 @@
             this.Name = "FrParcel";
             this.Text = "FrParcel";
             this.Load += new System.EventHandler(this.FrParcel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParcels)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parcelsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,10 +265,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnInput;
         private System.Windows.Forms.Button btnBackToMenu;
-        private System.Windows.Forms.ComboBox cboID;
-        private System.Windows.Forms.ComboBox cboCapacity;
-        private System.Windows.Forms.ComboBox cboSeason;
-        private System.Windows.Forms.ComboBox cboPrice;
-        private System.Windows.Forms.ComboBox cboType;
+        private EventHandler button1_Click;
+        private System.Windows.Forms.DataGridView dgvParcels;
+        private npeterman_DBDataSet2 npeterman_DBDataSet2;
+        private System.Windows.Forms.BindingSource parcelsBindingSource;
+        private npeterman_DBDataSet2TableAdapters.ParcelsTableAdapter parcelsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seasonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }

@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvGuests = new System.Windows.Forms.DataGridView();
             this.btnRezerviraj = new System.Windows.Forms.Button();
+            this.npetermanDBDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.npeterman_DBDataSet1 = new Kampovilasttry.npeterman_DBDataSet1();
+            this.npeterman_DBDataSet3 = new Kampovilasttry.npeterman_DBDataSet3();
+            this.npetermanDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npetermanDBDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npetermanDBDataSet3BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGuests
             // 
+            this.dgvGuests.AllowUserToOrderColumns = true;
             this.dgvGuests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGuests.AutoGenerateColumns = false;
             this.dgvGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGuests.DataSource = this.npetermanDBDataSet3BindingSource;
             this.dgvGuests.Location = new System.Drawing.Point(28, 12);
             this.dgvGuests.Name = "dgvGuests";
             this.dgvGuests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -55,6 +67,26 @@
             this.btnRezerviraj.UseVisualStyleBackColor = true;
             this.btnRezerviraj.Click += new System.EventHandler(this.btnRezerviraj_Click);
             // 
+            // npetermanDBDataSet1BindingSource
+            // 
+            this.npetermanDBDataSet1BindingSource.DataSource = this.npeterman_DBDataSet1;
+            this.npetermanDBDataSet1BindingSource.Position = 0;
+            // 
+            // npeterman_DBDataSet1
+            // 
+            this.npeterman_DBDataSet1.DataSetName = "npeterman_DBDataSet1";
+            this.npeterman_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // npeterman_DBDataSet3
+            // 
+            this.npeterman_DBDataSet3.DataSetName = "npeterman_DBDataSet3";
+            this.npeterman_DBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // npetermanDBDataSet3BindingSource
+            // 
+            this.npetermanDBDataSet3BindingSource.DataSource = this.npeterman_DBDataSet3;
+            this.npetermanDBDataSet3BindingSource.Position = 0;
+            // 
             // FrGuests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -66,6 +98,10 @@
             this.Text = "FrGuests";
             this.Load += new System.EventHandler(this.FrGuests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npetermanDBDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npetermanDBDataSet3BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,5 +110,9 @@
 
         private System.Windows.Forms.DataGridView dgvGuests;
         private System.Windows.Forms.Button btnRezerviraj;
+        private System.Windows.Forms.BindingSource npetermanDBDataSet1BindingSource;
+        private npeterman_DBDataSet1 npeterman_DBDataSet1;
+        private System.Windows.Forms.BindingSource npetermanDBDataSet3BindingSource;
+        private npeterman_DBDataSet3 npeterman_DBDataSet3;
     }
 }

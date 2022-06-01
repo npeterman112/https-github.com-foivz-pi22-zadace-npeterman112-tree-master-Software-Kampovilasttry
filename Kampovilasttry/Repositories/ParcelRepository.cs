@@ -11,8 +11,13 @@ namespace Kampovilasttry.Repositories
 {
     public class ParcelRepository
     {
+
         public static Parcel GetParcel(int id)
         {
+            DB.SetConfiguration(database: "npeterman_DB",
+                                username: "npeterman",
+                                password: "SY&$1!WH");
+
             Parcel parcel = null;
             string sql = $"SELECT * FROM Parcels WHERE Id = {id}";
             DB.OpenConnection();
@@ -26,11 +31,13 @@ namespace Kampovilasttry.Repositories
             DB.CloseConnection();
             return parcel;
         }
+
+
         public static List<Parcel> GetParcels()
         {
 
             List<Parcel> parcels = new List<Parcel>();
-            string sql = "SELECT * FROM PArcels";
+            string sql = "SELECT * FROM Parcels";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())

@@ -74,6 +74,17 @@
     <Compile Include="FrParcel.Designer.cs">
       <DependentUpon>FrParcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrParcel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrParcel2.Designer.cs">
+      <DependentUpon>FrParcel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Guests.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\Owner.cs" />
     <Compile Include="Models\Parcel.cs" />
@@ -94,6 +105,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>npeterman_DBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="npeterman_DBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>npeterman_DBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="npeterman_DBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>npeterman_DBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GuestRepository.cs" />
@@ -110,6 +131,9 @@
     <EmbeddedResource Include="FrParcel.resx">
       <DependentUpon>FrParcel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrParcel2.resx">
+      <DependentUpon>FrParcel2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,6 +143,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Guests.xsc">
+      <DependentUpon>Guests.xsd</DependentUpon>
+    </None>
+    <None Include="Guests.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Guests.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Guests.xss">
+      <DependentUpon>Guests.xsd</DependentUpon>
+    </None>
     <None Include="npeterman_DBDataSet.xsc">
       <DependentUpon>npeterman_DBDataSet.xsd</DependentUpon>
     </None>
@@ -141,6 +176,28 @@
     <None Include="npeterman_DBDataSet1.xss">
       <DependentUpon>npeterman_DBDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="npeterman_DBDataSet2.xsc">
+      <DependentUpon>npeterman_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="npeterman_DBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>npeterman_DBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="npeterman_DBDataSet2.xss">
+      <DependentUpon>npeterman_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="npeterman_DBDataSet3.xsc">
+      <DependentUpon>npeterman_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="npeterman_DBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>npeterman_DBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="npeterman_DBDataSet3.xss">
+      <DependentUpon>npeterman_DBDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,8 +211,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="DLLs\DBLayer.dll" />
+    <Content Include="DLL\DBLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
