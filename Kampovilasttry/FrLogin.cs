@@ -61,5 +61,10 @@ namespace Kampovilasttry
             }
 
         }
+
+        private void FrLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

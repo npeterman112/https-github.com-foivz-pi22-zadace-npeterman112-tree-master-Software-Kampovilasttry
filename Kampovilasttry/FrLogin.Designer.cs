@@ -95,6 +95,7 @@
             this.Name = "FrLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrLogin";
+            this.Load += new System.EventHandler(this.FrLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

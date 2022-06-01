@@ -21,6 +21,10 @@ namespace Kampovilasttry
         public FrParcel()
         {
             InitializeComponent();
+
+            DB.SetConfiguration(database: "npeterman_DB",
+                                           username: "npeterman",
+                                           password: "SY&$1!WH");
         }
 
         public FrParcel(Guest selectedGuest)
@@ -53,9 +57,7 @@ namespace Kampovilasttry
 
             if (txtID.Text != "" && txtCapacity.Text != "" && txtPrice.Text != "" && txtSeason.Text != "" && txtType.Text != "")
             {
-                DB.SetConfiguration(database: "npeterman_DB",
-                                       username: "npeterman",
-                                       password: "SY&$1!WH");
+               
                 DB.OpenConnection();
                 var sql = "INSERT INTO Parcels (Id, Type, Capacity, Season, Price) VALUES ("+ txtID.Text +"," + "'"+ txtType.Text +"'"+"," + txtCapacity.Text +","+"'"+ txtSeason.Text+"'"+","+ txtPrice.Text +")";
                 DB.ExecuteCommand(sql);
@@ -77,6 +79,7 @@ namespace Kampovilasttry
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             DialogResult mb = MessageBox.Show("Proceed with deletion?", "confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(mb == DialogResult.Yes)
             {
@@ -116,6 +119,56 @@ namespace Kampovilasttry
             
             
         }
-    }
-}
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            DialogResult mb = MessageBox.Show("Proceed with change?", "confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (mb == DialogResult.Yes)
+                    {
+                    DB.OpenConnection();
+                   
+                       
+                            if (txtType.Text != "")
+                            {
+                        
+                            var tr= "UPDATE Parcels SET Type="+"'"+txtType.Text+"'"+"WHERE ID="+txtID.Text;
+                        DB.ExecuteCommand(tr);
+                        
+                        this.parcelsTableAdapter.Update(this.npeterman_DBDataSet2.Parcels);
+                            }
+                            if (txtCapacity.Text != "")
+                            {
+                        var tr = "UPDATE Parcels SET Capacity=" + "'" + txtCapacity.Text + "'" + "WHERE ID=" + txtID.Text;
+                        DB.ExecuteCommand(tr);
+                        this.parcelsTableAdapter.Update(this.npeterman_DBDataSet2.Parcels);
+                            }
+                            if (txtSeason.Text != "")
+                            {
+                         var tr = "UPDATE Parcels SET Season=" + "'" + txtSeason.Text + "'" + "WHERE ID=" + txtID.Text;
+                        DB.ExecuteCommand(tr);
+                        this.parcelsTableAdapter.Update(this.npeterman_DBDataSet2.Parcels);
+                            }
+                            if (txtPrice.Text != "")
+                            {
+                        var tr = "UPDATE Parcels SET Price=" + "'" + txtPrice.Text + "'" + "WHERE ID=" + txtID.Text;
+                        DB.ExecuteCommand(tr);
+                        this.parcelsTableAdapter.Update(this.npeterman_DBDataSet2.Parcels);
+                            }
+                       
+                        
+                    DB.CloseConnection();
+                FrParcel frParcel = new FrParcel();
+                Hide();
+                frParcel.ShowDialog();
+                Close();
+
+
+            }
+            
+
+          }
+     }
+         
+}
+ 
