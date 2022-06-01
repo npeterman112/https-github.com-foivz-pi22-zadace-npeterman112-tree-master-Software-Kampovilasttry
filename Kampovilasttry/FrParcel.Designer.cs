@@ -53,6 +53,7 @@ namespace Kampovilasttry
             this.npeterman_DBDataSet2 = new Kampovilasttry.npeterman_DBDataSet2();
             this.parcelsTableAdapter = new Kampovilasttry.npeterman_DBDataSet2TableAdapters.ParcelsTableAdapter();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).BeginInit();
@@ -60,35 +61,35 @@ namespace Kampovilasttry
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(75, 87);
+            this.txtID.Location = new System.Drawing.Point(45, 84);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(75, 168);
+            this.txtCapacity.Location = new System.Drawing.Point(75, 171);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(100, 20);
             this.txtCapacity.TabIndex = 1;
             // 
             // txtSeason
             // 
-            this.txtSeason.Location = new System.Drawing.Point(75, 206);
+            this.txtSeason.Location = new System.Drawing.Point(63, 206);
             this.txtSeason.Name = "txtSeason";
             this.txtSeason.Size = new System.Drawing.Size(100, 20);
             this.txtSeason.TabIndex = 2;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(75, 252);
+            this.txtPrice.Location = new System.Drawing.Point(49, 252);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 3;
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(75, 126);
+            this.txtType.Location = new System.Drawing.Point(58, 126);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(100, 20);
             this.txtType.TabIndex = 4;
@@ -105,7 +106,7 @@ namespace Kampovilasttry
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 171);
+            this.label2.Location = new System.Drawing.Point(12, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 6;
@@ -114,7 +115,7 @@ namespace Kampovilasttry
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 213);
+            this.label3.Location = new System.Drawing.Point(12, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 7;
@@ -123,7 +124,7 @@ namespace Kampovilasttry
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 252);
+            this.label4.Location = new System.Drawing.Point(12, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 8;
@@ -132,7 +133,7 @@ namespace Kampovilasttry
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 129);
+            this.label5.Location = new System.Drawing.Point(12, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 9;
@@ -234,11 +235,22 @@ namespace Kampovilasttry
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(151, 81);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(99, 23);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "Search by ID";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // FrParcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvParcels);
             this.Controls.Add(this.btnBackToMenu);
@@ -289,5 +301,6 @@ namespace Kampovilasttry
         private System.Windows.Forms.DataGridViewTextBoxColumn seasonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

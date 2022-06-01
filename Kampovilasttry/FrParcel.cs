@@ -93,6 +93,29 @@ namespace Kampovilasttry
 
         }
 
- 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DB.OpenConnection();
+            string searchValue = txtID.Text;
+            try
+            {
+                var re = from row in npeterman_DBDataSet2.Parcels.AsEnumerable() where row[0].ToString().Equals(searchValue) select row;
+                if (re.Count() == 0)
+                {
+                    MessageBox.Show("No Row");
+                }
+                else
+                {
+                    dgvParcels.DataSource=re.CopyToDataTable();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            
+        }
     }
 }
+
