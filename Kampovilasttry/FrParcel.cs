@@ -46,7 +46,6 @@ namespace Kampovilasttry
         {
             // TODO: This line of code loads data into the 'npeterman_DBDataSet2.Parcels' table. You can move, or remove it, as needed.
             this.parcelsTableAdapter.Fill(this.npeterman_DBDataSet2.Parcels);
-
         }
 
         private void btnInput_Click(object sender, EventArgs e)
@@ -74,6 +73,11 @@ namespace Kampovilasttry
             Hide();
             frParcel.ShowDialog();
             Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+       
         }
     }
 }

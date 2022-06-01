@@ -1,4 +1,5 @@
-﻿using Kampovilasttry.Models;
+﻿using DBLayer;
+using Kampovilasttry.Models;
 using Kampovilasttry.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Kampovilasttry
 {
     public partial class FrGuests : Form
     {
+
         public FrGuests()
         {
             InitializeComponent();
@@ -21,19 +23,18 @@ namespace Kampovilasttry
 
         private void FrGuests_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'npeterman_DBDataSet3.Guests' table. You can move, or remove it, as needed.
+            this.guestsTableAdapter.Fill(this.npeterman_DBDataSet3.Guests);
             ShowGuests1();
         }
         private void ShowGuests1()
         {
-            List<Guest> guests1 = GuestRepository.GetGuests();
-            dgvGuests.DataSource = guests1;
 
-            dgvGuests.Columns["GuestID"].DisplayIndex = 0;
-            dgvGuests.Columns["FirstName"].DisplayIndex = 1;
-            dgvGuests.Columns["LastName"].DisplayIndex = 2;
-            dgvGuests.Columns["OIB"].DisplayIndex = 3;
-            dgvGuests.Columns["Phone"].DisplayIndex = 4;
-            dgvGuests.Columns["Age"].DisplayIndex = 5;
+            DB.SetConfiguration(database: "npeterman_DB",
+                                username: "npeterman",
+                                password: "SY&$1!WH");
+
+
 
         }
 

@@ -14,70 +14,7 @@ namespace Kampovilasttry.Repositories
     public class GuestRepository {
        
 
-        public static Guest GetGuest(int id)
-        {
-            DB.SetConfiguration(database: "npeterman_DB",
-                                username: "npeterman",
-                                password: "SY&$1!WH");
-            
-            Guest guest = null;
-            string sql = $"SELECT * FROM Guests WHERE GuestId = {id}";
-            DB.OpenConnection();
-            SqlDataReader reader = DB.GetDataReader(sql);
-            if (reader.HasRows)
-            {
-                reader.Read();
-                guest = CreateObject(reader);
-                reader.Close();
-            }
-            DB.CloseConnection();
-            return guest;
-        }
-
-   
-        public static List<Guest> GetGuests()
-        {
-            
-            List<Guest> guests1 = new List<Guest>();
-            string sql = "SELECT * FROM Guests";
-             DB.OpenConnection();
-            SqlDataReader reader = DB.GetDataReader(sql);
-            {
-                if (reader.HasRows)
-                {
-
-                    while (reader.Read())
-                    {
-                        Guest guest = CreateObject(reader);
-                        guests1.Add(guest);
-                    }
-                }
-                else { Console.WriteLine("No rows found"); }
-                reader.Close();
-            }
-
-            DB.CloseConnection();
-            return guests1;
-        }
-        private static Guest CreateObject(SqlDataReader reader)
-        {
-            int guestid = int.Parse(reader["GuestId"].ToString());
-            string firstName = reader["FirstName"].ToString();
-            string lastName = reader["LastName"].ToString();
-            string phone = reader["Phone"].ToString();
-            string oib = reader["OIB"].ToString();
-            int age = int.Parse(reader["Age"].ToString());
-            var guest = new Guest
-            {
-                GuestId = guestid,
-                FirstName = firstName,
-                LastName = lastName,
-                Phone = phone,
-                OIB = oib,
-                Age = age
-            };
-            return guest;
-        }
+        
 
     }
 
