@@ -44,18 +44,18 @@ namespace Kampovilasttry
             this.btnInput = new System.Windows.Forms.Button();
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.dgvParcels = new System.Windows.Forms.DataGridView();
-            this.npeterman_DBDataSet2 = new Kampovilasttry.npeterman_DBDataSet2();
-            this.parcelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.parcelsTableAdapter = new Kampovilasttry.npeterman_DBDataSet2TableAdapters.ParcelsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parcelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.npeterman_DBDataSet2 = new Kampovilasttry.npeterman_DBDataSet2();
+            this.parcelsTableAdapter = new Kampovilasttry.npeterman_DBDataSet2TableAdapters.ParcelsTableAdapter();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcels)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
@@ -178,20 +178,7 @@ namespace Kampovilasttry
             this.dgvParcels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParcels.Size = new System.Drawing.Size(539, 330);
             this.dgvParcels.TabIndex = 12;
-            // 
-            // npeterman_DBDataSet2
-            // 
-            this.npeterman_DBDataSet2.DataSetName = "npeterman_DBDataSet2";
-            this.npeterman_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // parcelsBindingSource
-            // 
-            this.parcelsBindingSource.DataMember = "Parcels";
-            this.parcelsBindingSource.DataSource = this.npeterman_DBDataSet2;
-            // 
-            // parcelsTableAdapter
-            // 
-            this.parcelsTableAdapter.ClearBeforeFill = true;
+            this.dgvParcels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParcels_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -222,6 +209,20 @@ namespace Kampovilasttry
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // parcelsBindingSource
+            // 
+            this.parcelsBindingSource.DataMember = "Parcels";
+            this.parcelsBindingSource.DataSource = this.npeterman_DBDataSet2;
+            // 
+            // npeterman_DBDataSet2
+            // 
+            this.npeterman_DBDataSet2.DataSetName = "npeterman_DBDataSet2";
+            this.npeterman_DBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // parcelsTableAdapter
+            // 
+            this.parcelsTableAdapter.ClearBeforeFill = true;
             // 
             // btnDelete
             // 
@@ -256,8 +257,8 @@ namespace Kampovilasttry
             this.Text = "FrParcel";
             this.Load += new System.EventHandler(this.FrParcel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcels)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parcelsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.npeterman_DBDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

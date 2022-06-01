@@ -57,7 +57,7 @@ namespace Kampovilasttry
                                        username: "npeterman",
                                        password: "SY&$1!WH");
                 DB.OpenConnection();
-                string sql = $"INSERT INTO Parcels (Id, Type, Capacity, Season, Price) VALUES ({txtID.Text},{txtType.Text},{txtCapacity.Text},{txtSeason.Text},{txtPrice.Text})";
+                var sql = "INSERT INTO Parcels (Id, Type, Capacity, Season, Price) VALUES ("+ txtID.Text +"," + "'"+ txtType.Text +"'"+"," + txtCapacity.Text +","+"'"+ txtSeason.Text+"'"+","+ txtPrice.Text +")";
                 DB.ExecuteCommand(sql);
                 DB.CloseConnection();
                 FrParcel frParcel = new FrParcel();
@@ -77,7 +77,22 @@ namespace Kampovilasttry
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-       
+            DialogResult mb = MessageBox.Show("Proceed with deletion?", "confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(mb == DialogResult.Yes)
+            {
+              foreach(DataGridViewRow row in dgvParcels.SelectedRows)
+                {
+                    dgvParcels.Rows.Remove(row);
+                    this.parcelsTableAdapter.Update(this.npeterman_DBDataSet2.Parcels);
+                }
+            }
         }
+
+        private void dgvParcels_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+ 
     }
 }
